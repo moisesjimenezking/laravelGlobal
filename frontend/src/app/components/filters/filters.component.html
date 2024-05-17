@@ -1,0 +1,35 @@
+<section class="w-full">
+    <div class="w-full flex flex-col gap-y-3">
+        <form [formGroup]="form" class="w-full flex flex-wrap gap-2">
+            <div>
+                <app-custom-input class="uppercase" controlKey="surname" placeholder="Primer apellido"
+                    [required]="false" />
+            </div>
+            <div>
+                <app-custom-input class="uppercase" controlKey="secondSurname" placeholder="Segundo apellido"
+                    [required]="false" />
+
+            </div>
+            <div>
+                <app-custom-input class="uppercase" controlKey="firstName" placeholder="Primer nombre"
+                    [required]="false" />
+            </div>
+            <div>
+                <app-custom-input class="uppercase" controlKey="otherName" placeholder="Otro nombre"
+                    [required]="false" />
+            </div>
+            <div>
+                <app-custom-input class="uppercase" controlKey="dni" placeholder="Identificación" [required]="false" />
+            </div>
+        </form>
+        <div class="flex flex-row gap-x-2">
+            <app-button class="w-[110px] border-secondary border-[1.8px]" textColor="dark" color="light"
+                (click)="onReset()">
+                <span>Cancelar</span>
+            </app-button>
+            <app-button class="w-[110px]" (click)="onSearch()">
+                <span>Buscar</span>
+            </app-button>
+        </div>
+    </div>
+</section>

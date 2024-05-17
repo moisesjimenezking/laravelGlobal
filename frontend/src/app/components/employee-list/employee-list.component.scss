@@ -1,0 +1,37 @@
+.employee-section {
+    width: 100%;
+    height: auto;
+
+    padding: 1.75rem 1.25rem;
+
+    background: transparent;
+
+    border-radius: 24px;
+}
+
+.tb-grid {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    border-radius: 12px;
+    overflow: hidden;
+
+
+    .tb-grid-headers {
+        width: 1440px;
+
+        color: var(--color-white);
+        background: rgb(var(--color-primary-rgb) / .75);
+
+        padding: 1rem .55rem;
+        place-items: center;
+
+        display: grid;
+        grid-template-areas: 'fullname fullname identification email email country admission admission area area actions';
+        grid-template-columns: auto;
+
+        div {
+            width: 100%;
+        }
+    }
+}

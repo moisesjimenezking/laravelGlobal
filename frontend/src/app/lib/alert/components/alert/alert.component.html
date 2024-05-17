@@ -1,0 +1,30 @@
+<div class="alert__backdrop">
+    <div class="alert__container">
+        <div id="alert__content" class="alert__content text-color">
+            <h2 class="text-[28px] text-center font-medium">{{ alertOptions.title }}</h2>
+
+            @if(alertOptions.icon) {
+            <div class="h-auto w-auto flex items-center justify-center" [innerHTML]="alertOptions.icon"></div>
+            }
+
+            <span class="text-xl text-center grow" [innerHTML]="alertOptions.body">
+            </span>
+
+            <div class="w-full flex flex-row gap-x-2 items-center justify-center">
+                <button class="capitalize bg-primary rounded-[14px] min-h-[48px] w-full"
+                    (click)="dismiss(alertRole.confirmed)">
+                    <span class="text-white font-medium text-lg">
+                        {{ _getTextConfirmButton() }}
+                    </span>
+                </button>
+                @if(_getShowValueCancelButton()){
+                <button class="capitalize border-[2px] border-primary rounded-[14px] min-h-[48px] w-full"
+                    (click)="dismiss(alertRole.cancelled)">
+                    <span class="font-medium text-lg text-[var(--color-dark)]">{{ _getTextCancelButton()
+                        }}</span>
+                </button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

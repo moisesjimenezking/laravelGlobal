@@ -1,0 +1,72 @@
+<section class="employee-section">
+    <div class="flex flex-col gap-y-2 md:flex-row md:items-center justify-between">
+        <h3 class="text-2xl text-pretty">Lista de empleados</h3>
+        <app-button class="w-[180px] h-[30px] md:w-[240px]" (click)="onRegisterEmployee()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z" />
+            </svg>
+            <span>Registrar empleado</span>
+        </app-button>
+    </div>
+
+
+    <div class="w-full my-6">
+        <app-filters (search)="onSearchEmployee($event)" />
+        <app-pagination [enablePrevPagination]="page > 1" [enableNextPagination]="
+            employees.length > 
+            limit" />
+    </div>
+
+    <div class="relative overflow-x-auto sm:rounded-lg my-3">
+        <table class="w-full text-sm text-left rtl:text-right table-auto">
+            <thead class="max-[992px]:hidden bg-primary text-white rounded-lg text-xs text-pretty uppercase">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Nombre completo
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Identificación
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Correo electrónico
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        País del empleo
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Fecha de ingreso
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Area
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Acciones
+                    </th>
+                </tr>
+            </thead>
+
+            @if(isLoading) {
+            <div class="w-full flex items-center mt-2">
+                <span class="text-sm font-medium text-pretty text-center">Cargando empleados...</span>
+            </div>
+            }
+            @if(!isLoading && employees.length > 0){
+            <tbody>
+                @for (employee of employees; track employee.id) {
+                <app-employee [data]="employee" (edit)="onEditEmployee($event)" (delete)="onDeleteEmployee($event)" />
+                }
+            </tbody>
+
+            }
+
+
+            @if(!isLoading && employees.length == 0){
+            <div class="w-full flex items-center mt-2">
+                <span class="text-sm font-medium text-pretty text-center">No se encontraron empleados</span>
+            </div>
+            }
+
+        </table>
+    </div>
+
+</section>

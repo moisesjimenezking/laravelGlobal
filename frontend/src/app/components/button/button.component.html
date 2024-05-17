@@ -1,0 +1,11 @@
+<button [ngClass]="getButtonClass()" [style]="'background: var(--color-' + color + ');'">
+    @if(!loading){
+    <ng-content />
+    }
+
+    @if(loading){
+    <div class="app-button-loader-backdrop">
+        <ng-content select="[text-loading]" />
+    </div>
+    }
+</button>

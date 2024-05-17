@@ -1,0 +1,92 @@
+:host {
+    display: contents;
+}
+
+input:-internal-autofill-selected {
+    // background-color: rgb(var(--color-medium-rgb) / .75) !important;
+    color: var(--color-text) !important;
+
+    &~.__input__icon {
+        color: var(--color-text) !important;
+    }
+}
+
+
+
+::ng-deep input:-webkit-autofill {
+    // -webkit-box-shadow: inset 0 0 0 1000px rgb(var(--color-medium-rgb) / .75) !important;
+    color: var(--color-text) !important;
+}
+
+.__input__container {
+
+    position: relative;
+
+    height: auto;
+    min-height: 44px;
+
+    width: 100%;
+    max-width: 480px;
+
+
+    .__input__label {
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: var(--color-white);
+        font-weight: 500;
+        text-align: left;
+        max-height: 24px;
+    }
+
+    div {
+        color: var(--color-dark);
+        background: var(--color-light);
+
+        border-radius: 14px;
+
+        input {
+            padding: 2px;
+            font-size: 16px;
+
+            height: 42px;
+            max-height: 42px;
+            width: auto;
+            flex-grow: 1;
+
+            outline: none !important;
+
+            transition: all 280ms ease-in;
+
+            background: transparent !important;
+
+            &:focus {
+                border-color: var(--color-secondary) !important;
+            }
+
+            &::placeholder {
+                color: var(--color-dark);
+            }
+
+        }
+
+        .__input__icon {
+            height: 24px;
+            width: auto;
+            max-width: max-content;
+            color: var(--color-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+
+
+
+
+
+    .__input__message__error {
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,29 @@
+<nav aria-label="Page navigation Global Tecnología Academy">
+    <ul class="flex items-center gap-2 my-3 h-8 text-sm justify-end">
+        <li>
+            <button [disabled]="!enablePrevPagination"
+                class="flex items-center justify-center px-3 h-8 leading-tight text-[var(--color-dark)] bg-white border border-[var(--color-dark)] rounded-lg hover:bg-secondary hover:text-white"
+                (click)="paginate.emit('prev')">
+                <span class="sr-only">Previous</span>
+                <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 1 1 5l4 4" />
+                </svg>
+            </button>
+        </li>
+
+        <li>
+            <button [disabled]="!enableNextPagination"
+                class="flex items-center justify-center px-3 h-8 leading-tight text-[var(--color-dark)] bg-white border border-[var(--color-dark)] rounded-lg hover:bg-secondary hover:text-white"
+                (click)="paginate.emit('next')">
+                <span class="sr-only">Next</span>
+                <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 9 4-4-4-4" />
+                </svg>
+            </button>
+        </li>
+    </ul>
+</nav>

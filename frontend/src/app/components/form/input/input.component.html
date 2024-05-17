@@ -1,0 +1,21 @@
+<div class="__input__container">
+
+    @if(label?.length) {
+    <label class="__input__label" [for]="id">{{label}}</label>
+    }
+    <div class="w-full h-auto flex flex-row gap-1 items-center px-3 py-1">
+        <div class="__input__icon text-tcolor">
+            <ng-content select="svg, i, app-icon:not(.input-icon-end)" />
+        </div>
+        <input [readonly]="readonly" autocomplete="new_password" [style]="style" [class]="'relative ' + cssClass"
+            [type]="type" [id]="id" [(ngModel)]="innerValue" [min]="min" [max]="max" (blur)="onBlur()"
+            (input)="onChange($event)" [placeholder]="placeholder" [required]="required">
+        <div class="__input__icon text-tcolor">
+            <ng-content select=".input-icon-end, .input-icon-end" />
+        </div>
+    </div>
+
+    <div [class]="'__input__message__error '+ errorMessageClass">
+        <ng-content />
+    </div>
+</div>

@@ -1,0 +1,45 @@
+.alert__backdrop {
+    width: 100%;
+    max-height: 100vh;
+    height: 100%;
+    background-color: rgb(0 0 0 / .35);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1084;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.alert__container {
+    z-index: 1091;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+
+}
+
+.alert__content {
+    padding: 1.75rem 1.2rem;
+    border-radius: 36px;
+
+    background: var(--color-white);
+    border: 2.4px solid var(--color-medium);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+
+    overflow: hidden;
+}

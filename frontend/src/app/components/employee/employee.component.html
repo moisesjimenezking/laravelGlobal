@@ -1,0 +1,78 @@
+@defer (when screenWidth >= 992) {
+<tr class="bg-tertiary rounded-xl hover:[var(--color-medium)]">
+    <th scope="row" class="px-6 py-4 font-medium  whitespace-nowrap ">
+        {{getFullName()}}
+    </th>
+    <td class="px-6 py-4">
+        {{data.identificationType}}-{{data.identificationNumber}}
+    </td>
+    <td class="px-6 py-4">
+        {{data.email}}
+    </td>
+    <td class="px-6 py-4">
+        {{data.country}}
+    </td>
+    <td class="px-6 py-4">
+        {{data.admissionDate}}
+    </td>
+    <td class="px-6 py-4">
+        {{data.area}}
+    </td>
+    <td class=" px-6 py-4">
+        <div class="flex items-center gap-2">
+            <button type="button" class="outline-none border-none flex rounded-[8px] p-[5px]"
+                style="background: rgb(var(--color-primary-rgb) / .75);" (click)="onEdit()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-white" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M16.84 2.73c-.39 0-.77.15-1.07.44l-2.12 2.12l5.3 5.31l2.12-2.1c.6-.61.6-1.56 0-2.14L17.9 3.17c-.3-.29-.68-.44-1.06-.44M12.94 6l-8.1 8.11l2.56.28l.18 2.29l2.28.17l.29 2.56l8.1-8.11m-14 3.74L2.5 21.73l6.7-1.79l-.24-2.16l-2.31-.17l-.18-2.32" />
+                </svg>
+            </button>
+            <button type="button" class="outline-none border-none flex bg-red-500/80 rounded-[8px] p-[5px]"
+                (click)="onDelete()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-white" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3zm0 5h2v9H9zm4 0h2v9h-2z" />
+                </svg>
+            </button>
+        </div>
+    </td>
+</tr>
+}
+
+@defer (when screenWidth < 992) { <div class="employee">
+    <div class="employee-content">
+        <div class="employee-content-block">
+            <h3 class="text-sm font-medium">
+                {{getFullName()}}
+            </h3>
+            <span class="text-xs font-light">
+                {{data.email}}
+            </span>
+        </div>
+        <div class="employee-content-block text-right">
+            <h4 class="text-sm">
+                {{data.area}}
+            </h4>
+            <p class="text-[11px] font-extralight">
+                {{data.admissionDate}}
+            </p>
+        </div>
+    </div>
+    <div class="employee-actions">
+        <button type="button" class="outline-none border-none flex rounded-[8px] p-[5px]"
+            style="background: rgb(var(--color-primary-rgb) / .75);" (click)="onEdit()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-white" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M16.84 2.73c-.39 0-.77.15-1.07.44l-2.12 2.12l5.3 5.31l2.12-2.1c.6-.61.6-1.56 0-2.14L17.9 3.17c-.3-.29-.68-.44-1.06-.44M12.94 6l-8.1 8.11l2.56.28l.18 2.29l2.28.17l.29 2.56l8.1-8.11m-14 3.74L2.5 21.73l6.7-1.79l-.24-2.16l-2.31-.17l-.18-2.32" />
+            </svg>
+        </button>
+        <button type="button" class="outline-none border-none flex bg-red-500/80 rounded-[8px] p-[5px]"
+            (click)="onDelete()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-white" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3zm0 5h2v9H9zm4 0h2v9h-2z" />
+            </svg>
+        </button>
+    </div>
+    </div>
+    }
